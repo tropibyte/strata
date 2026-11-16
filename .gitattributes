@@ -1,0 +1,31 @@
+# Normalize line endings in the repository; check out with the platform's default.
+* text=auto
+
+# Source and build files
+*.cpp text diff=cpp
+*.hpp text diff=cpp
+*.h text diff=cpp
+*.txt text
+*.md text diff=markdown
+*.json text
+*.yml text
+*.cmake text
+CMakeLists.txt text
+
+# Shell scripts must keep LF; Windows scripts keep CRLF.
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.sln text eol=crlf
+*.vcxproj text eol=crlf
+
+# Sample data: keep byte-for-byte so tests see the same input everywhere.
+examples/** -text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.ico binary
+*.zip binary
+*.gz binary
